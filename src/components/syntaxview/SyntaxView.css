@@ -16,5 +16,17 @@
 
 .syntax-view-cross:hover {
     cursor: pointer;
-    color: #ff0000;
+    color: red;
+}
+
+.syntax-container {
+    font-size: 1.2rem;
+}
+
+.syntax-container div {
+    display: flex;
+}
+
+.syntax-type {
+    margin: 0px;
 }

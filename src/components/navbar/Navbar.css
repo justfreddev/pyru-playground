@@ -1,14 +1,25 @@
 .nav {
+    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0rem 2rem;
-    background-color: #242424;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+    border-bottom: 1px solid #000;
 }
 
 .title {
     font-size: 1.5rem;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.87);
+}
+.syntax-button {
+    background-color: #fff;
+    color: #000;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
 }

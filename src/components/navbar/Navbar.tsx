@@ -12,7 +12,9 @@ const Navbar: React.FC<NavbarProps> = ({ toggleViewingSyntax }) => {
     return (
         <div className="nav">
             <h1 className="title">Interpreter Playground</h1>
-            <button onClick={handleSyntaxToggle}>Syntax</button>
+            <button className="syntax-button" onClick={handleSyntaxToggle}>
+                Syntax
+            </button>
         </div>
     );
 };

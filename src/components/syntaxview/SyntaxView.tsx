@@ -25,7 +25,9 @@ const SyntaxView: React.FC<SyntaxViewProps> = ({ toggleViewingSyntax }) => {
                     </svg>
                 </a>
             </div>
-            <p>Here is the syntax view.</p>
+            <h3>
+                Syntax can be found in the <a href="#">README.md</a>
+            </h3>
         </div>
     );
 };
