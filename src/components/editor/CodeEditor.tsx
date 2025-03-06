@@ -13,15 +13,18 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ setCode }) => {
     return (
         <div className="code-editor">
             <CodeMirror
-                className="code-mirror"
-                options={{
-                    lineNumbers: true,
-                    lineWrapping: false,
-                    theme: "lesser-dark",
-                }}
-                onChange={(_editor, _data, value) => {
-                    setCode(value);
-                }}
+            className="code-mirror"
+            options={{
+                lineNumbers: true,
+                lineWrapping: false,
+                theme: "lesser-dark",
+            }}
+            onChange={(_editor, _data, value) => {
+                setCode(value);
+            }}
+            editorDidMount={(editor) => {
+                editor.setSize("100%", "100%");
+            }}
             />
         </div>
     );
