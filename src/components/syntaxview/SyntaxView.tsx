@@ -26,7 +26,7 @@ const SyntaxView: React.FC<SyntaxViewProps> = ({ toggleViewingSyntax }) => {
                 </a>
             </div>
             <h3>
-                Syntax can be found in the <a href="#">README.md</a>
+                Syntax can be found in the <a href="https://github.com/justfreddev/pyru/blob/master/src/grammar.ebnf">Grammar</a>
             </h3>
         </div>
     );
