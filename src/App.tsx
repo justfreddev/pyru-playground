@@ -9,47 +9,47 @@ import Output from "./components/output/Output";
 import "./App.css";
 
 function App() {
-    const [isViewingSyntax, setIsViewingSyntax] = useState(false);
-    const [outputArray, setOutputArray] = useState<string[]>([]);
-    const [code, setCode] = useState("");
+  const [isViewingSyntax, setIsViewingSyntax] = useState(false);
+  const [outputArray, setOutputArray] = useState<string[]>([]);
+  const [code, setCode] = useState("");
 
-    function toggleViewingSyntax() {
-        setIsViewingSyntax((prev) => !prev);
-    }
+  function toggleViewingSyntax() {
+    setIsViewingSyntax((prev) => !prev);
+  }
 
-    function runCode() {
-        setOutputArray((prevArray) => [...prevArray, "Running code..."]);
+  function runCode() {
+    setOutputArray((prevArray) => [...prevArray, "Running code..."]);
 
-        axios
-            .post(
-                "https://nifty-bassi-ypda.shuttle.app/v1/runcode",
-                { source: code },
-                { headers: { "Access-Control-Allow-Origin": "*" } }
-            )
-            .then((response) => {
-                setOutputArray((prevArray) => [
-                    ...prevArray,
-                    ...JSON.parse(response.data),
-                ]);
-            })
-            .catch((error) => {
-                console.error(error.response);
-            });
-    }
+    axios
+      .post(
+        "https://nifty-bassi-ypda.shuttle.app/v1/runcode",
+        { source: code },
+        { headers: { "Access-Control-Allow-Origin": "*" } }
+      )
+      .then((response) => {
+        setOutputArray((prevArray) => [
+          ...prevArray,
+          ...JSON.parse(response.data),
+        ]);
+      })
+      .catch((error) => {
+        console.error(error.response);
+      });
+  }
 
-    return (
-        <div>
-            <Navbar toggleViewingSyntax={toggleViewingSyntax} />
-            <div className="main">
-                <CodeEditor setCode={setCode} />
-                <Output runCode={runCode} outputArray={outputArray} />
-            </div>
+  return (
+    <div>
+      <Navbar toggleViewingSyntax={toggleViewingSyntax} />
+      <div className="main">
+        <CodeEditor setCode={setCode} />
+        <Output runCode={runCode} outputArray={outputArray} />
+      </div>
 
-            {isViewingSyntax && (
-                <SyntaxView toggleViewingSyntax={toggleViewingSyntax} />
-            )}
-        </div>
-    );
+      {isViewingSyntax && (
+        <SyntaxView toggleViewingSyntax={toggleViewingSyntax} />
+      )}
+    </div>
+  );
 }
 
 export default App;

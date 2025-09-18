@@ -1,32 +1,32 @@
 .syntax-view {
-    background-color: #1a1919;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  background-color: #1a1919;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .syntax-view-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .syntax-view-cross:hover {
-    cursor: pointer;
-    color: red;
+  cursor: pointer;
+  color: red;
 }
 
 .syntax-container {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .syntax-container div {
-    display: flex;
+  display: flex;
 }
 
 .syntax-type {
-    margin: 0px;
+  margin: 0px;
 }

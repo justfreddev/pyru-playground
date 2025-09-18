@@ -6,28 +6,28 @@ import "codemirror/mode/javascript/javascript";
 import "./CodeEditor.css";
 
 type CodeEditorProps = {
-    setCode: (code: string) => void;
+  setCode: (code: string) => void;
 };
 
 const CodeEditor: React.FC<CodeEditorProps> = ({ setCode }) => {
-    return (
-        <div className="code-editor">
-            <CodeMirror
-            className="code-mirror"
-            options={{
-                lineNumbers: true,
-                lineWrapping: false,
-                theme: "lesser-dark",
-            }}
-            onChange={(_editor, _data, value) => {
-                setCode(value);
-            }}
-            editorDidMount={(editor) => {
-                editor.setSize("100%", "100%");
-            }}
-            />
-        </div>
-    );
+  return (
+    <div className="code-editor">
+      <CodeMirror
+        className="code-mirror"
+        options={{
+          lineNumbers: true,
+          lineWrapping: false,
+          theme: "lesser-dark",
+        }}
+        onChange={(_editor, _data, value) => {
+          setCode(value);
+        }}
+        editorDidMount={(editor) => {
+          editor.setSize("100%", "100%");
+        }}
+      />
+    </div>
+  );
 };
 
 export default CodeEditor;
