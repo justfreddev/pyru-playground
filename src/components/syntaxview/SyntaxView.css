@@ -1,11 +1,29 @@
 .syntax-view {
-  background-color: #1a1919;
+  background-color: rgba(26, 25, 25, 0.95);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.syntax-view h2,
+.syntax-view h3,
+.syntax-view h4 {
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+
+.syntax-view p {
+  margin-top: 2px;
+  margin-bottom: 6px;
+}
+
+.syntax-view pre {
+  margin-top: 2px;
+  margin-bottom: 10px;
+  padding: 6px;
 }
 
 .syntax-view-header {
@@ -20,11 +38,9 @@
 }
 
 .syntax-container {
-  font-size: 1.2rem;
-}
-
-.syntax-container div {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0 1rem;
 }
 
 .syntax-type {

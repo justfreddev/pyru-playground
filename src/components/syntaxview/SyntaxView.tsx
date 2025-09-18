@@ -8,7 +8,13 @@ const SyntaxView: React.FC<SyntaxViewProps> = ({ toggleViewingSyntax }) => {
   return (
     <div className="syntax-view">
       <div className="syntax-view-header">
-        <h2>Syntax</h2>
+        <h2>Pyru Syntax</h2>
+        <h3>
+          EBNF grammar available{" "}
+          <a href="https://github.com/justfreddev/pyru/blob/master/src/grammar.ebnf">
+            here
+          </a>
+        </h3>
         <a className="syntax-view-cross" onClick={toggleViewingSyntax}>
           <svg
             width="46"
@@ -25,12 +31,116 @@ const SyntaxView: React.FC<SyntaxViewProps> = ({ toggleViewingSyntax }) => {
           </svg>
         </a>
       </div>
-      <h3>
-        Syntax can be found in the{" "}
-        <a href="https://github.com/justfreddev/pyru/blob/master/src/grammar.ebnf">
-          Grammar
-        </a>
-      </h3>
+
+      <div className="syntax-container">
+        <div>
+          <h4>Variable declaration</h4>
+          <pre>
+            {`let x = 10;
+let name = "fred";
+let bool = true;
+`}
+          </pre>
+        </div>
+
+        <div>
+          <h4>Variable assignment</h4>
+          <pre>
+            {`x = x + 1;
+name = "fred" + " padgham";
+`}
+          </pre>
+        </div>
+
+        <div>
+          <h4>Printing expressions</h4>
+          <pre>
+            {`print(123);
+print(name);
+print(null);
+`}
+          </pre>
+        </div>
+
+        <div>
+          <h4>If statements</h4>
+          <pre>
+            {`if name == "fred":
+  print("hello fred");
+else:
+  print("you're not fred!");
+
+let fruits = ["apples", "bananas", "cherries"];
+if "apples" in fruits:
+  print("yes");
+
+if "dates" not in fruits:
+  print("yes");
+`}
+          </pre>
+        </div>
+
+        <div>
+          <h4>Lists</h4>
+          <pre>
+            {`let fruit = ["apples", "bananas", "cherries"];
+print(fruit[0]);
+print(fruit[:1]);
+fruit.push("dates");
+print(fruit.pop());
+fruit.remove(3);
+fruit.insertAt(3, "dates");
+fruit.index("bananas");
+print(len(fruit));
+print(fruit.sort());
+`}
+          </pre>
+        </div>
+
+        <div>
+          <h4>Functions</h4>
+          <pre>
+            {`def fibonacci(n):
+  if n <= 1:
+    return n;
+  else:
+    return fibonacci(n - 1) + fibonacci(n - 2);
+`}
+          </pre>
+        </div>
+
+        <div>
+          <h4>While loops</h4>
+          <pre>
+            {`let counter = 0;
+while counter < 10:
+  print(counter);
+  counter++;
+`}
+          </pre>
+        </div>
+
+        <div>
+          <h4>For loops</h4>
+          <pre>
+            {`for i in 0..10:
+  print(i);
+
+for j in 0..10 step 2:
+  print(j);
+`}
+          </pre>
+        </div>
+
+        <div>
+          <h4>Native functions</h4>
+          <pre>
+            {`print(hash("abc"));
+print(clock());
+`}
+          </pre>
+        </div>
+      </div>
     </div>
   );
 };

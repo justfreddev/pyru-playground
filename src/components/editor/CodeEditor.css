@@ -3,6 +3,7 @@
   height: 100%;
   position: relative;
   border-right: 1px solid #000;
+  cursor: text;
 }
 
 .code-mirror {
