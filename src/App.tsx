@@ -22,7 +22,7 @@ function App() {
 
         axios
             .post(
-                "http://127.0.0.1:8000/v1/runcode",
+                "https://nifty-bassi-ypda.shuttle.app/v1/runcode",
                 { source: code },
                 { headers: { "Access-Control-Allow-Origin": "*" } }
             )
