@@ -12,6 +12,7 @@ function App() {
   const [isViewingSyntax, setIsViewingSyntax] = useState(false);
   const [outputArray, setOutputArray] = useState<string[]>([]);
   const [code, setCode] = useState("");
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   function toggleViewingSyntax() {
     setIsViewingSyntax((prev) => !prev);
@@ -22,7 +23,7 @@ function App() {
 
     axios
       .post(
-        "https://nifty-bassi-ypda.shuttle.app/v1/runcode",
+        `${apiUrl}/v1/runcode`,
         { source: code },
         { headers: { "Access-Control-Allow-Origin": "*" } }
       )
