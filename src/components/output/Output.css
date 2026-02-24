@@ -5,11 +5,86 @@
   left: 0px;
   display: flex;
   flex-direction: column;
+  height: 100%;
+}
+
+.output-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 0.5rem;
+  gap: 1rem;
 }
 
 .output-title {
   margin: 0;
   padding-left: 0.5rem;
+  flex-shrink: 0;
+}
+
+.execution-mode-selector {
+  display: flex;
+  gap: 0;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.mode-button {
+  padding: 6px 12px;
+  background-color: transparent;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.mode-button:first-child {
+  border-right: 1px solid #555;
+}
+
+.mode-button:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.mode-button.active {
+  color: #fff;
+  background-color: #4caf50;
+}
+
+.output-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid #444;
+  overflow-x: auto;
+}
+
+.tab-button {
+  padding: 10px 16px;
+  background-color: transparent;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tab-button:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.tab-button.active {
+  color: #fff;
+  border-bottom-color: #4caf50;
 }
 
 .output {
@@ -20,8 +95,10 @@
   font-family: "Courier New", monospace;
   font-size: 16px;
   padding-left: 0.5rem;
+  padding-top: 0.5rem;
   resize: none;
   overflow: auto;
+  flex: 1;
 }
 
 .output:focus {
@@ -34,9 +111,10 @@
   border-radius: 10px;
   padding: 5px 10px;
   border: none;
-  position: absolute;
-  top: 5px;
-  right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .run:hover {

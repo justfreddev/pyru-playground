@@ -131,15 +131,6 @@ for j in 0..10 step 2:
 `}
           </pre>
         </div>
-
-        <div>
-          <h4>Native functions</h4>
-          <pre>
-            {`print(hash("abc"));
-print(clock());
-`}
-          </pre>
-        </div>
       </div>
     </div>
   );
