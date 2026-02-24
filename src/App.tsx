@@ -62,15 +62,11 @@ function App() {
 
     const apiUrl =
       executionMode === "interpreter"
-        ? `${interpreterApiUrl}`
+        ? `${interpreterApiUrl}/v1/runcode`
         : `${compilerApiUrl}`;
 
     axios
-      .post(
-        apiUrl,
-        { source: code },
-        { headers: { "Access-Control-Allow-Origin": "*" } },
-      )
+      .post(apiUrl, { source: code }, {})
       .then((response) => {
         const responseData =
           typeof response.data === "string"
